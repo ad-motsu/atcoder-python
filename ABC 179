@@ -1,11 +1,12 @@
 ・Plural Form
 
-回答例
+```{#lst:id python caption="回答例"}
 S = input()
 if S[-1] == "s":
     print(S + "es")
 else:
     print(S + "s")
+```
 
 
 自分の答え
