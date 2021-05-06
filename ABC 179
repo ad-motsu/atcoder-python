@@ -1,4 +1,4 @@
-・Plural Form
+## Plural Form
 
 ```python3
 S = input()
@@ -13,7 +13,7 @@ else:
 S = input()
 print(S+"es" if S.endwith('s') else S+'s')
 
-・Go to Jail
+## Go to Jail
 ```{#lst:id python caption="回答例"}
 def judge():
     cnt = 0  # 今何連続でゾロ目が出ているか記録しておきます
