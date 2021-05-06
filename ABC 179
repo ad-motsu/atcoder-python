@@ -1,0 +1,74 @@
+・Plural Form
+
+回答例
+S = input()
+if S[-1] == "s":
+    print(S + "es")
+else:
+    print(S + "s")
+
+
+自分の答え
+S = input()
+print(S+"es" if S.endwith('s') else S+'s')
+
+・Go to Jail
+回答例
+```
+def judge():
+    cnt = 0  # 今何連続でゾロ目が出ているか記録しておきます
+    for _ in range(N):
+        x, y = map(int, input().split())
+        if x == y:
+            cnt += 1
+        else:
+            cnt = 0
+        if cnt == 3:
+            return True
+    return False
+
+N = int(input())
+if judge():
+    print("Yes")
+else:
+    print("No")
+```
+if を2回使うことでカウントを＋し、数回以上での判定を入れることが出来る
+
+
+・A x B + C
+１：楽な方法？
+def solve():
+    ans = 0
+    for a in range(1, N):
+        for b in range(1, N):
+            c = N - a * b
+            if c <= 0:
+                break
+            ans += 1
+    return ans
+
+
+N = int(input())
+ans = solve()
+print(ans)
+まずN=a*b+cをc = N - a * bに変換する。
+Nは標準入力なので、AとBを決めることでCを決定させる。
+そのためにAとBを2重forループさせるが、AとBはN-1での範囲しか取らないことに注意しないといけない
+＊関数内に書くだけでも高速化するので、可能な限り書く
+
+２：発想がめんどい方法
+式変形は同じだが、Aを固定してC>0以上のを満たすBがどれだけあるかを求めれば、
+1<A<N-1まで全探索して求めることが出来る
+Bの最大値はC=1≤N-A*Bmaxかつ最大最小はc>0なので求める個数はBmax個
+
+1≤N-A*Bmax
+⇔A*Bmax≤N-1
+⇔Bmax≤(N-1)/A
+Bmaxは整数値なので、切り捨てた値が解になる
+残りはAを1からN-1まで全検索して、それぞれのBmaxを足せば良い
+
+N = imput(readline())
+ans = 0
+for a in range(1,N):
+    ans += (N - 1) // a #//は切り捨て除算
