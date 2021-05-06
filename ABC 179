@@ -13,8 +13,7 @@ S = input()
 print(S+"es" if S.endwith('s') else S+'s')
 
 ・Go to Jail
-回答例
-```
+```{#lst:id python caption="回答例"}
 def judge():
     cnt = 0  # 今何連続でゾロ目が出ているか記録しておきます
     for _ in range(N):
