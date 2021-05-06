@@ -1,6 +1,6 @@
 ・Plural Form
 
-```Python
+```py3
 S = input()
 if S[-1] == "s":
     print(S + "es")
