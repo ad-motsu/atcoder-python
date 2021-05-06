@@ -1,6 +1,6 @@
 ・Plural Form
 
-```{#lst:id python caption="回答例"}
+```python
 S = input()
 if S[-1] == "s":
     print(S + "es")
